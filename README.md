@@ -10,9 +10,9 @@ This GitHub repository includes some shell files for installing and executing ng
     - `docker network create ngroknet`
 2. `docker pull wernight/ngrok`
 3. Run a container with a mapped port
-    - eg: `docker run -d -p 80 –net ngroknet –name www nginx`
+    - eg: `docker run -d -p 80 --network=ngroknet --name www nginx`
 4. Run the `ngrok` container, with the port 4040 open, for checking the open connections
-    - `docker run -d -p 4040:4040 –net ngroknet –name ngrok wernight/ngrok ngrok http www:80`
+    - `docker run -d -p 4040:4040 --network=ngroknet --name ngrok wernight/ngrok ngrok http www:80`
     - **Note**: The command that it is executed at the `ngrok` container is `ngrok http www:80`, where
     - `www` is the name of the container
     - `80` is the open port from www
